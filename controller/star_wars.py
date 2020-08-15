@@ -24,4 +24,3 @@ class StarWarsController:
     def get_characters(self, film_id):
         characters = self._service.get_characters(film_id)
         return jsonify(characters)
-
