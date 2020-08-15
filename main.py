@@ -21,7 +21,7 @@ flags.DEFINE_string('api_root_url',
                     'https://swapi.dev/api',
                     'API root url')
 flags.DEFINE_integer('port',
-                     1337,
+                     8080,
                      'Port to run proxy on')
 flags.DEFINE_integer('cache_ttl',
                      3600,
