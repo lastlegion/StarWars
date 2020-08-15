@@ -37,7 +37,7 @@ def main(argv):
 
     caching_service = CachingService(api_root_url=FLAGS.api_root_url,
                                      repository=repository,
-                                     ttl=3600)
+                                     ttl=FLAGS.cache_ttl)
     app = Flask(__name__)
     app.register_blueprint(controller.get_bluprint())
 
