@@ -2,6 +2,7 @@ import logging
 
 from absl import app, flags
 from flask import Flask
+from gevent.pywsgi import WSGIServer
 
 from repository import StarWarsRepository
 from service import StarWarsService, CachingService
@@ -41,8 +42,8 @@ def main(argv):
 
     caching_service.daemon = True
     caching_service.start()
-    app.run(host='0.0.0.0', port=FLAGS.port)
-    print(app)
+    http_server = WSGIServer(('', FLAGS.port), app)
+    http_server.serve_forever()
 
 
 if __name__ == '__main__':
