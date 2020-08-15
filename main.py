@@ -14,7 +14,7 @@ logging.basicConfig(format='%(asctime)s,%(msecs)d %(levelname)-8s [%(filename)s:
 FLAGS = flags.FLAGS
 
 flags.DEFINE_string('db_info',
-                    './star_was.db',
+                    './star_wars.db',
                     'Name and Path of the cache')
 flags.DEFINE_string('api_root_url',
                     'https://swapi.dev/api',
